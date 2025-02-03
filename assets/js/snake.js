@@ -43,8 +43,9 @@ startButton.addEventListener('click', function() {
     startgame();
 });
 //game over
-gameOverScreen.querySelector('.start-button').addEventListener('click',function());
-startgame();
+gameOverScreen.querySelector('.start-button').addEventListener('click', function() {
+    startgame();
+});
 
 // Event listener for keyboard controls
 document.addEventListener('keydown', function(e) {
