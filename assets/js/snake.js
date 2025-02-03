@@ -143,6 +143,13 @@ function loop() {
             // Generate new random gem position
             gem.x = getRandomInt(0, 25) * grid;
             gem.y = getRandomInt(0, 25) * grid;
+            gemEaten=true;
+        }
+        for(let i = index + 1; i< snake.cells.length; i++){
+            if(cell.x=== snake.cells[i].x && cell.y ===snake.cells[i].y){
+                endGame();
+                collisionSound.play();
+            }
         }
 
         // Check for self-collision
