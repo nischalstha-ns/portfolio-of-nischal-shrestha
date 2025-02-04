@@ -12,7 +12,7 @@ let gemEaten = false;
 
 let snake = {
     x: 160,
-    y: 160, 
+    y: 160,
     dx: grid,
     dy: 0,
     cells: [],
@@ -31,6 +31,10 @@ let animationFrame;
 let startButton = document.querySelector('.start-button');
 let gameOverScreen = document.querySelector('.game-over');
 let scoreDisplay = document.querySelector('.score-display');
+let upButton = document.getElementById('up-btn');
+let downButton = document.getElementById('down-btn');
+let leftButton = document.getElementById('left-btn');
+let rightButton = document.getElementById('right-btn');
 
 // Function to get a random integer
 function getRandomInt(min, max) {
@@ -45,13 +49,10 @@ if (gameOverScreen) {
     gameOverScreen.querySelector('.start-button').addEventListener('click', startGame);
 }
 
-// Event listener for keyboard controls
+// Keyboard event listener
 document.addEventListener('keydown', function (e) {
-    if (!gameRunning) {
-        return;
-    }
+    if (!gameRunning) return;
 
-    // 37=left, 38=up, 39=right, 40=down, 32=spacebar
     if (e.which === 37 && snake.dx === 0) {
         snake.dx = -grid;
         snake.dy = 0;
@@ -69,9 +70,9 @@ document.addEventListener('keydown', function (e) {
     // Pause game on spacebar
     if (e.which === 32) {
         gamePaused = !gamePaused;
-        context.fillStyle = '#fff';
-        context.font = 'bold 30px Arial';
         if (gamePaused) {
+            context.fillStyle = '#fff';
+            context.font = 'bold 30px Arial';
             context.fillText('Game Paused', canvas.width / 2 - 100, canvas.height / 2);
         } else {
             animationFrame = requestAnimationFrame(loop);
@@ -79,27 +80,46 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
+// **Touch Event Listeners for Mobile**
+upButton.addEventListener('touchstart', () => {
+    if (snake.dy === 0) {
+        snake.dx = 0;
+        snake.dy = -grid;
+    }
+});
+downButton.addEventListener('touchstart', () => {
+    if (snake.dy === 0) {
+        snake.dx = 0;
+        snake.dy = grid;
+    }
+});
+leftButton.addEventListener('touchstart', () => {
+    if (snake.dx === 0) {
+        snake.dx = -grid;
+        snake.dy = 0;
+    }
+});
+rightButton.addEventListener('touchstart', () => {
+    if (snake.dx === 0) {
+        snake.dx = grid;
+        snake.dy = 0;
+    }
+});
+
 // Main game loop
 function loop() {
-    if (!gameRunning || gamePaused) {
-        return;
-    }
+    if (!gameRunning || gamePaused) return;
 
     animationFrame = requestAnimationFrame(loop);
 
-    if (++count < 10) {
-        return;
-    }
+    if (++count < 10) return;
     count = 0;
 
-    // Clear canvas before rendering
     context.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Move snake
     snake.x += snake.dx;
     snake.y += snake.dy;
 
-    // Wrap around walls (if applicable)
     if (snake.x < 0) {
         snake.x = canvas.width - grid;
     } else if (snake.x >= canvas.width) {
@@ -112,50 +132,33 @@ function loop() {
         snake.y = 0;
     }
 
-    // Add new position to the front of the snake array
     snake.cells.unshift({ x: snake.x, y: snake.y });
 
-    // Remove extra cells if snake length exceeds maxCells
     if (snake.cells.length > snake.maxCells) {
         snake.cells.pop();
     }
 
-    // Draw gem
     context.fillStyle = "#fff";
     context.fillRect(gem.x, gem.y, grid - 1, grid - 1);
-    context.shadowColor = 'rgba(0,0,0,0.5)';
-    context.shadowBlur = 5;
-    context.shadowOffsetX = 2;
-    context.shadowOffsetY = 2;
 
-    // Draw snake
     context.fillStyle = "#00FF00";
     snake.cells.forEach(function (cell, index) {
         context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
 
-        // Snake eats gem
         if (cell.x === gem.x && cell.y === gem.y) {
             snake.maxCells++;
             score++;
             scoreDisplay.textContent = score;
             eatingSound.play();
 
-            // Generate new random gem position
             gem.x = getRandomInt(0, 25) * grid;
             gem.y = getRandomInt(0, 25) * grid;
-            gemEaten=true;
-        }
-        for(let i = index + 1; i< snake.cells.length; i++){
-            if(cell.x=== snake.cells[i].x && cell.y ===snake.cells[i].y){
-                endGame();
-                collisionSound.play();
-            }
         }
 
-        // Check for self-collision
         for (let i = index + 1; i < snake.cells.length; i++) {
             if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
                 endGame();
+                collisionSound.play();
             }
         }
     });
@@ -163,9 +166,7 @@ function loop() {
 
 // Start game function
 function startGame() {
-    if (gameRunning) {
-        return;
-    }
+    if (gameRunning) return;
 
     gameRunning = true;
     gamePaused = false;
