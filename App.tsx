@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { Theme, ActiveSection } from './types'; // Removed unused PersonalDetails, NavItem imports
+import { Theme, ActiveSection } // Removed unused PersonalDetails, NavItem imports
+from './types';
 import { PERSONAL_DETAILS, NAV_ITEMS, DEFAULT_SECTION } from './constants';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
@@ -9,19 +10,21 @@ import ResumeSection from './components/sections/ResumeSection';
 import PortfolioSection from './components/sections/PortfolioSection';
 import BlogSection from './components/sections/BlogSection';
 import ContactSection from './components/sections/ContactSection';
+import ChatbotFAB from './components/chatbot/ChatbotFAB';
+import ChatbotWindow from './components/chatbot/ChatbotWindow';
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState<Theme>('light');
   const [activeSection, setActiveSection] = useState<ActiveSection>(DEFAULT_SECTION);
   const [isSidebarContactsOpen, setIsSidebarContactsOpen] = useState<boolean>(false);
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState<boolean>(false);
+  const [isChatbotOpen, setIsChatbotOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme') as Theme | null;
     if (storedTheme) {
       setTheme(storedTheme);
     } else {
-      // Prefer dark mode if system prefers it
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         setTheme('dark');
       }
@@ -51,9 +54,12 @@ const App: React.FC = () => {
   
   const handleSetActiveSection = useCallback((section: ActiveSection) => {
     setActiveSection(section);
-    setIsMobileSidebarOpen(false); // Close mobile sidebar on navigation
+    setIsMobileSidebarOpen(false); 
   }, []);
 
+  const toggleChatbot = useCallback(() => {
+    setIsChatbotOpen(prev => !prev);
+  }, []);
 
   const renderSection = () => {
     switch (activeSection) {
@@ -96,6 +102,8 @@ const App: React.FC = () => {
       >
         {renderSection()}
       </MainContent>
+      <ChatbotFAB onOpen={toggleChatbot} isChatbotOpen={isChatbotOpen}/>
+      <ChatbotWindow isOpen={isChatbotOpen} onClose={toggleChatbot} theme={theme} />
     </div>
   );
 };

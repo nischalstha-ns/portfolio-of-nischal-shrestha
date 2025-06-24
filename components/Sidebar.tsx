@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { PersonalDetails, ContactInfo, SocialLink, Theme, NavItem, ActiveSection } from '../types';
 

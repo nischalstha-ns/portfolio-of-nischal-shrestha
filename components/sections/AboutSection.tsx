@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { PersonalDetails } from '../../types'; // Removed ResumeContent as skills are not directly used here from RESUME_DATA for skills list
 import { RESUME_DATA } from '../../constants';

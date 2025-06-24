@@ -3,23 +3,37 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 
-// TypeScript declaration for ion-icon custom elements
+// Define attributes specific to ion-icon
+interface IonIconCustomProps {
+  name?: string;
+  src?: string;
+  icon?: string; // often an alias for name
+  size?: 'small' | 'large' | string; // ion-icon specific size prop
+  color?: string; // ion-icon specific color prop (e.g., "primary", "secondary" - not CSS style color)
+  ios?: string;   // platform-specific icon variant
+  md?: string;    // platform-specific icon variant
+  flipRtl?: boolean;
+  lazy?: boolean;
+  // 'class' is a direct attribute for web components.
+  // React typically uses 'className'.
+  // This allows 'class' to be passed directly if needed by ion-icon.
+  class?: string;
+}
+
+// Combine custom ion-icon props with standard React HTML attributes,
+// omitting conflicting properties from the standard HTML attributes.
+type IonIconReactProps = IonIconCustomProps & 
+  Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, 'color' | 'size'>;
+
+// Augment JSX.IntrinsicElements to include ion-icon
+// This approach avoids re-declaring all standard HTML elements,
+// preventing conflicts with React's built-in types.
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'ion-icon': {
-        name: string;
-        class?: string;
-        id?: string;
-        role?: string;
-        'aria-label'?: string;
-        style?: React.CSSProperties;
-        src?: string;
-        icon?: string;
-        size?: 'small' | 'large' | string;
-        color?: string; // Corresponds to CSS variable --ion-color-step-XXX or theme colors
-        onClick?: (event: React.MouseEvent<HTMLElement>) => void;
-      };
+      'ion-icon': IonIconReactProps;
+      // Standard HTML elements (div, span, etc.) will use React's default typings.
+      // No need to list them all here.
     }
   }
 }

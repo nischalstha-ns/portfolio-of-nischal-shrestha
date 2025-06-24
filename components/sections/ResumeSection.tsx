@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { RESUME_DATA } from '../../constants';
 import { EducationEntry, ExperienceEntry, Skill } from '../../types';

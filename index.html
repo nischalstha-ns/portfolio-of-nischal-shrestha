@@ -15,6 +15,18 @@
     <script type="module" src="https://unpkg.com/ionicons@7/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7/dist/ionicons/ionicons.js"></script>
     <script>
+      // WARNING: EXTREMELY IMPORTANT - FOR DEVELOPMENT AND DEMONSTRATION PURPOSES ONLY.
+      // THE API KEY IS VISIBLE IN CLIENT-SIDE CODE HERE.
+      // **NEVER DEPLOY AN APPLICATION WITH AN API KEY EXPOSED LIKE THIS IN PRODUCTION.**
+      // In a real production app, the API_KEY must be handled via a secure backend proxy or server-side environment variables.
+      // This setup simulates `process.env.API_KEY` for the Gemini SDK based on project guidelines and the key provided by the user.
+      window.process = {
+        env: {
+          API_KEY: "AIzaSyAFEyEAPUdQVF9UIC1QlX3OLJsyXmZbPX0" // API key provided by user in the prompt.
+        }
+      };
+    </script>
+    <script>
       tailwind.config = {
         darkMode: 'class', // or 'media' or 'class'
         theme: {
@@ -38,11 +50,21 @@
               pulseSlow: {
                 '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 rgba(49, 130, 206, 0.4)' },
                 '50%': { transform: 'scale(1.02)', boxShadow: '0 0 0 5px rgba(49, 130, 206, 0)' },
+              },
+              slideInUp: {
+                '0%': { opacity: '0', transform: 'translateY(100%)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              slideOutDown: {
+                '0%': { opacity: '1', transform: 'translateY(0)' },
+                '100%': { opacity: '0', transform: 'translateY(100%)' },
               }
             },
             animation: {
               fadeIn: 'fadeIn 0.5s ease-out forwards',
               pulseSlow: 'pulseSlow 2.5s infinite ease-in-out',
+              slideInUp: 'slideInUp 0.3s ease-out forwards',
+              slideOutDown: 'slideOutDown 0.3s ease-in forwards',
             }
           }
         }
@@ -53,7 +75,8 @@
   "imports": {
     "react": "https://esm.sh/react@^19.1.0",
     "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
-    "react/": "https://esm.sh/react@^19.1.0/"
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai"
   }
 }
 </script>
