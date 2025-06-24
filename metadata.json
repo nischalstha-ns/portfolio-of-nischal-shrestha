@@ -1,0 +1,5 @@
+{
+  "name": "Personal Portfolio Website",
+  "description": "A dynamic personal portfolio website showcasing skills, experience, projects, and contact information. Built with React, TypeScript, and Tailwind CSS, featuring a responsive design and theme toggling.",
+  "requestFramePermissions": []
+}

@@ -1,195 +1,67 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Nischal Shrestha - Web Developer and AI Engineer Portfolio">
-  <meta name="theme-color" content="#a7d4a1">
-  <title>Nischal Shrestha - Portfolio</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Personal Portfolio Website"
+    />
+    <link rel="icon" href="https://picsum.photos/seed/favicon/32/32" />
+    <title>Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7/dist/ionicons/ionicons.js"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // or 'media' or 'class'
+        theme: {
+          extend: {
+            colors: {
+              'primary-light': '#F7F9FC', // Light background
+              'secondary-light': '#FFFFFF', // Light card/element background
+              'text-light': '#1A202C',    // Light mode text
+              'accent': '#3182CE',         // Accent color (e.g., blue-500)
 
-  <link rel="shortcut icon" href="./assets/images/ns-logo.png" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+              'primary-dark': '#1A202C',  // Dark background (e.g., gray-800)
+              'secondary-dark': '#2D3748', // Dark card/element background (e.g., gray-700)
+              'text-dark': '#E2E8F0',      // Dark mode text (e.g., gray-200)
+              'accent-dark': '#63B3ED',     // Accent color for dark mode (e.g., blue-300)
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              pulseSlow: {
+                '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 rgba(49, 130, 206, 0.4)' },
+                '50%': { transform: 'scale(1.02)', boxShadow: '0 0 0 5px rgba(49, 130, 206, 0)' },
+              }
+            },
+            animation: {
+              fadeIn: 'fadeIn 0.5s ease-out forwards',
+              pulseSlow: 'pulseSlow 2.5s infinite ease-in-out',
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
 </head>
-<body>
-
-  <main>
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/ff.png" alt="Nischal Shrestha" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Nischal Shrestha">Nischal Shrestha</h1>
-
-          <p class="title">Web developer,AI Engineer</p>
-        </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name='logo-github'></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Github Profile</p>
-
-              <a href="https://github.com/nischalstha-ns" class="contact-link">nischalstha-ns</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:niscthastha123@gmail.com" class="contact-link">niscthastha123@gmail.com</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+9779808548593" class="contact-link">+977 9808548593</a>
-              <a href="tel:+9779764638377" class="contact-link">+977 9764638377</a>
-              </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">September 29,2004</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Tokha, Kathmandu, Nepal</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://www.facebook.com/nishal.shrestha.3388" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.instagram.com/___not_dead___/" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </aside>
-
-    <div class="main-content">
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-      <!-- Rest of the content remains unchanged -->
-
-    </div>
-
-  </main>
-
-  <style>
-    .navbar-link:active,
-    .form-btn:active,
-    .service-item:active {
-      transform: scale(0.98);
-    }
-  </style>
-
-  <script src="./assets/js/script.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
 </body>
 </html>
