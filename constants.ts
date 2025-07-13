@@ -4,7 +4,7 @@ import { PersonalDetails, NavItem, ResumeContent, PortfolioItem, ActiveSection, 
 export const PERSONAL_DETAILS: PersonalDetails = {
   name: "Nischal Shrestha",
   title: "Web Developer, AI Engineer",
-  avatarUrl: "/assets/image/Nischal_pic.png",
+  avatarUrl: "./assets/image/Nischal_pic.png",
   contacts: [
     { type: 'github', label: 'GitHub', value: 'nischalstha-ns', link: 'https://github.com/nischalstha-ns', iconName: 'logo-github' },
     { type: 'email', label: 'Email', value: 'niscthastha123@gmail.com', link: 'mailto:niscthastha123@gmail.com', iconName: 'mail-outline' },
