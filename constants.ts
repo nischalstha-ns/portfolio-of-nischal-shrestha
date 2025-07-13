@@ -4,7 +4,7 @@ import { PersonalDetails, NavItem, ResumeContent, PortfolioItem, ActiveSection, 
 export const PERSONAL_DETAILS: PersonalDetails = {
   name: "Nischal Shrestha",
   title: "Web Developer, AI Engineer",
-  avatarUrl: "https://picsum.photos/seed/nischalavatar/120/120",
+  avatarUrl: "./assets/image/nischal_pic.png",
   contacts: [
     { type: 'github', label: 'GitHub', value: 'nischalstha-ns', link: 'https://github.com/nischalstha-ns', iconName: 'logo-github' },
     { type: 'email', label: 'Email', value: 'niscthastha123@gmail.com', link: 'mailto:niscthastha123@gmail.com', iconName: 'mail-outline' },
@@ -14,7 +14,7 @@ export const PERSONAL_DETAILS: PersonalDetails = {
     { type: 'location', label: 'Location', value: 'Tokha, Kathmandu, Nepal', iconName: 'location-outline' },
   ],
   socials: [
-    { name: 'Facebook', url: 'https://www.facebook.com/nishal.shrestha.3388', iconName: 'logo-facebook' },
+    { name: 'Facebook', url: 'https://www.facebook.com/nischal.shrestha.1248/', iconName: 'logo-facebook' },
     { name: 'Twitter', url: '#', iconName: 'logo-twitter' }, // Assuming '#' means no specific link for now
     { name: 'Instagram', url: 'https://www.instagram.com/___not_dead___/', iconName: 'logo-instagram' },
     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/nischal-shrestha-ns/', iconName: 'logo-linkedin' },
@@ -38,37 +38,50 @@ export const RESUME_DATA: ResumeContent = {
     { degree: 'Bachlor In Information Technology (BIT)', institution: 'Nation College Of Managment And Techonogy Science', period: '2023 - Present', description: 'Lincon University' },
   ],
   experience: [
-    { role: 'Full-Stack Developer', company: 'Tech Innovations Ltd.', period: 'Jan 2024 - Present', responsibilities: ['Built end-to-end web applications using React, Node.js, and MongoDB.', 'Implemented AI chatbot solutions using Google Gemini API.', 'Led a team of 3 developers in agile development cycles.', 'Optimized application performance resulting in 40% faster load times.'] },
-    { role: 'Frontend Developer Intern', company: 'Tech Solutions Inc.', period: 'Summer 2023', responsibilities: ['Developed responsive UI components using React and Tailwind CSS.', 'Collaborated with designers and backend developers.', 'Participated in code reviews and agile sprints.'] }
+    {
+  role: 'Sales Marketing & Mentor',
+  company: 'Nischal Fancy Store',
+  period: 'Jan 2024 - Present',
+  responsibilities: [
+    'Developed and executed digital marketing strategies to increase online sales and brand visibility.',
+    'Designed and managed promotional campaigns, resulting in a 35% boost in customer engagement.',
+    'Mentored a team of junior staff in sales techniques, product knowledge, and customer service excellence.',
+    'Integrated AI chatbot using Google Gemini API to enhance customer support and automate FAQs.',
+    'Collaborated with developers to improve e-commerce website performance and streamline user experience.'
+  ]
+}
+
+    // { role: 'Sales Marketing & Mentor', company: 'Nischal Fancy Store', period: 'Jan 2024 - Present', responsibilities: ['Built end-to-end web applications using React, Node.js, and MongoDB.', 'Implemented AI chatbot solutions using Google Gemini API.', 'Led a team of 3 developers in agile development cycles.', 'Optimized application performance resulting in 40% faster load times.'] },
+    // { role: 'Frontend Developer Intern', company: 'Tech Solutions Inc.', period: 'Summer 2023', responsibilities: ['Developed responsive UI components using React and Tailwind CSS.', 'Collaborated with designers and backend developers.', 'Participated in code reviews and agile sprints.'] }
   ],
   skills: [
     { name: 'JavaScript', level: 95, iconName: 'logo-javascript' },
-    { name: 'React', level: 90, iconName: 'logo-react' },
-    { name: 'TypeScript', level: 85 },
+    { name: 'React', level: 50, iconName: 'logo-react' },
+    { name: 'TypeScript', level: 40 },
     { name: 'Node.js', level: 80, iconName: 'logo-nodejs' },
-    { name: 'Python', level: 85 },
-    { name: 'Next.js', level: 80 },
+    { name: 'Python', level: 40 },
+    { name: 'Next.js', level: 60 },
     { name: 'Tailwind CSS', level: 95 },
     { name: 'MongoDB', level: 75 },
-    { name: 'PostgreSQL', level: 70 },
+    // { name: 'PostgreSQL', level: 70 },
     { name: 'HTML5', level: 98, iconName: 'logo-html5' },
     { name: 'CSS3', level: 95, iconName: 'logo-css3' },
     { name: 'Git & GitHub', level: 90, iconName: 'logo-github' },
-    { name: 'Docker', level: 65 },
-    { name: 'AWS', level: 60 },
-    { name: 'AI/ML Concepts', level: 75 }
+    // { name: 'Docker', level: 65 },
+    // { name: 'AWS', level: 60 },
+    // { name: 'AI/ML Concepts', level: 75 }
   ]
 };
 
 export const PORTFOLIO_PROJECTS: PortfolioItem[] = [
-  { id: 'proj1', title: 'E-commerce Platform', description: 'A full-featured e-commerce website with product listings, cart functionality, and user accounts. Built with MERN stack.', imageUrl: 'https://picsum.photos/seed/ecom/400/300', tags: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS'], liveUrl: '#', repoUrl: '#' },
-  { id: 'proj2', title: 'Task Management App', description: 'A Kanban-style task management application to help users organize their projects and tasks efficiently.', imageUrl: 'https://picsum.photos/seed/taskapp/400/300', tags: ['React', 'Firebase', 'Material UI'], liveUrl: '#', repoUrl: '#' },
-  { id: 'proj3', title: 'Personal Blog', description: 'A dynamic personal blog platform with markdown support and a clean, responsive design.', imageUrl: 'https://picsum.photos/seed/blogcms/400/300', tags: ['Next.js', 'GraphQL', 'Tailwind CSS'], liveUrl: '#', repoUrl: '#' },
-  { id: 'proj4', title: 'AI Chatbot Assistant', description: 'An intelligent chatbot assistant integrated into a web application, capable of answering user queries.', imageUrl: 'https://picsum.photos/seed/aichat/400/300', tags: ['Python', 'Flask', 'NLP', 'React'], liveUrl: '#', repoUrl: '#' },
+  { id: 'proj1', title: 'E-commerce Platform', description: 'A full-featured e-commerce website with product listings, cart functionality, and user accounts. With the Admin panel.', imageUrl: './assets/image/ecommerce_home.png', tags: ['React', 'Node.js', 'Firebase', 'Tailwind CSS'], liveUrl: 'https://nfstokha.netlify.app/', repoUrl: 'https://github.com/nischalstha-ns/e-commerce' },
+  { id: 'proj2', title: 'AI Chatbot Assistant', description: 'An intelligent chatbot assistant integrated into a web application, capable of answering user queries.', imageUrl: './assets/image/chatbot.png', tags: ['Python', 'Flask', 'NLP', 'React'], liveUrl: 'https://npchatbot.nischalshrestha6.com.np/', repoUrl: 'https://github.com/nischalstha-ns/NP_Chatbot' },
+  // { id: 'proj2', title: 'Task Management App', description: 'A Kanban-style task management application to help users organize their projects and tasks efficiently.', imageUrl: 'YOUR_IMAGE_URL_HERE', tags: ['React', 'Firebase', 'Material UI'], liveUrl: '#', repoUrl: '#' },
+  // { id: 'proj3', title: 'Personal Blog', description: 'A dynamic personal blog platform with markdown support and a clean, responsive design.', imageUrl: 'YOUR_IMAGE_URL_HERE', tags: ['Next.js', 'GraphQL', 'Tailwind CSS'], liveUrl: '#', repoUrl: '#' },
 ];
 
 // Chatbot Constants
-export const CHATBOT_MODEL_NAME = 'gemini-2.5-flash-preview-04-17';
+export const CHATBOT_MODEL_NAME = 'Nischal_Shrestha';
 export const CHATBOT_INITIAL_LANGUAGE: SupportedLanguage = 'en-US';
 
 export const WELCOME_MESSAGES: Record<SupportedLanguage, string> = {
