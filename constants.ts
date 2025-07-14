@@ -4,7 +4,7 @@ import { PersonalDetails, NavItem, ResumeContent, PortfolioItem, ActiveSection, 
 export const PERSONAL_DETAILS: PersonalDetails = {
   name: "Nischal Shrestha",
   title: "Web Developer, AI Engineer",
-  avatarUrl: "./assets/image/Nischal_pic.png",
+  avatarUrl: "./assets/image/nischal_pic.png",
   contacts: [
     { type: 'github', label: 'GitHub', value: 'nischalstha-ns', link: 'https://github.com/nischalstha-ns', iconName: 'logo-github' },
     { type: 'email', label: 'Email', value: 'niscthastha123@gmail.com', link: 'mailto:niscthastha123@gmail.com', iconName: 'mail-outline' },
@@ -74,9 +74,9 @@ export const RESUME_DATA: ResumeContent = {
 };
 
 export const PORTFOLIO_PROJECTS: PortfolioItem[] = [
-  { id: 'proj1', title: 'E-commerce Platform', description: 'A full-featured e-commerce website with product listings, cart functionality, and user accounts. With the Admin panel.', imageUrl: '/assets/image/Ecommerce_home.png', tags: ['React', 'Node.js', 'Firebase', 'Tailwind CSS'], liveUrl: 'https://nfstokha.netlify.app/', repoUrl: 'https://github.com/nischalstha-ns/e-commerce' },
-  { id: 'proj2', title: 'AI Chatbot Assistant', description: 'An intelligent chatbot assistant integrated into a web application, capable of answering user queries.', imageUrl: '/assets/image/Chatbot.png', tags: ['Python', 'Flask', 'NLP', 'React'], liveUrl: 'https://npchatbot.nischalshrestha6.com.np/', repoUrl: 'https://github.com/nischalstha-ns/NP_Chatbot' },
-  { id: 'proj3', title: 'Snake Game', description: 'Easy to play the game with the website.', imageUrl: '/assets/image/Snake_game.png', tags: ['React', 'Game Development', 'Material UI'], liveUrl: 'https://snakenp.nischalshrestha6.com.np/', repoUrl: 'https://github.com/nischalstha-ns/Snake-NP_Game' },
+  { id: 'proj1', title: 'E-commerce Platform', description: 'A full-featured e-commerce website with product listings, cart functionality, and user accounts. With the Admin panel.', imageUrl: './assets/image/ecommerce_home.png', tags: ['React', 'Node.js', 'Firebase', 'Tailwind CSS'], liveUrl: 'https://nfstokha.netlify.app/', repoUrl: 'https://github.com/nischalstha-ns/e-commerce' },
+  { id: 'proj2', title: 'AI Chatbot Assistant', description: 'An intelligent chatbot assistant integrated into a web application, capable of answering user queries.', imageUrl: './assets/image/chatbot.png', tags: ['Python', 'Flask', 'NLP', 'React'], liveUrl: 'https://npchatbot.nischalshrestha6.com.np/', repoUrl: 'https://github.com/nischalstha-ns/NP_Chatbot' },
+  { id: 'proj3', title: 'Snake Game', description: 'Easy to play the game with the website.', imageUrl: './assets/image/Snake_game.png', tags: ['React', 'Game Development', 'Material UI'], liveUrl: 'https://snakenp.nischalshrestha6.com.np/', repoUrl: 'https://github.com/nischalstha-ns/Snake-NP_Game' },
   // { id: 'proj3', title: 'Personal Blog', description: 'A dynamic personal blog platform with markdown support and a clean, responsive design.', imageUrl: 'YOUR_IMAGE_URL_HERE', tags: ['Next.js', 'GraphQL', 'Tailwind CSS'], liveUrl: '#', repoUrl: '#' },
 ];
 

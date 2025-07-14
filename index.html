@@ -11,39 +11,40 @@
     />
     <link rel="icon" href="https://picsum.photos/seed/favicon/32/32" />
     <title>Personal Portfolio</title>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai"
+  }
+}
+</script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7/dist/ionicons/ionicons.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
     <script>
-      // WARNING: EXTREMELY IMPORTANT - FOR DEVELOPMENT AND DEMONSTRATION PURPOSES ONLY.
-      // THE API KEY IS VISIBLE IN CLIENT-SIDE CODE HERE.
-      // **NEVER DEPLOY AN APPLICATION WITH AN API KEY EXPOSED LIKE THIS IN PRODUCTION.**
-      // In a real production app, the API_KEY must be handled via a secure backend proxy or server-side environment variables.
-      // This setup simulates `process.env.API_KEY` for the Gemini SDK based on project guidelines and the key provided by the user.
       window.process = {
         env: {
-          API_KEY: "AIzaSyAFEyEAPUdQVF9UIC1QlX3OLJsyXmZbPX0" // API key provided by user in the prompt.
+          API_KEY: "AIzaSyAFEyEAPUdQVF9UIC1QlX3OLJsyXmZbPX0"
         }
       };
     </script>
     <script>
       tailwind.config = {
-        darkMode: 'class', // or 'media' or 'class'
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
-              'primary-light': '#F7F9FC', // Light background
-              'secondary-light': '#FFFFFF', // Light card/element background
-              'text-light': '#1A202C',    // Light mode text
-              'accent': '#3182CE',         // Accent color (e.g., blue-500)
-
-              'primary-dark': '#1A202C',  // Dark background (e.g., gray-800)
-              'secondary-dark': '#2D3748', // Dark card/element background (e.g., gray-700)
-              'text-dark': '#E2E8F0',      // Dark mode text (e.g., gray-200)
-              'accent-dark': '#63B3ED',     // Accent color for dark mode (e.g., blue-300)
+              'primary-light': '#F7F9FC',
+              'secondary-light': '#FFFFFF',
+              'text-light': '#1A202C',
+              'accent': '#3182CE',
+              'primary-dark': '#1A202C',
+              'secondary-dark': '#2D3748',
+              'text-dark': '#E2E8F0',
+              'accent-dark': '#63B3ED',
             },
             keyframes: {
               fadeIn: {
@@ -73,16 +74,6 @@
         }
       }
     </script>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.1.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
-    "react/": "https://esm.sh/react@^19.1.0/",
-    "@google/genai": "https://esm.sh/@google/genai"
-  }
-}
-</script>
 <link rel="stylesheet" href="/index.css">
 </head>
   <body>
